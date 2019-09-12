@@ -1,0 +1,27 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+flake8 = "*"
+black = "*"
+pylint = "*"
+matplotlib = "*"
+ipykernel = "*"
+blackcellmagic = "*"
+yellowbrick = "*"
+
+[packages]
+requests = "*"
+pandas = "*"
+scikit-learn = "*"
+tensorflow = "*"
+nltk = "*"
+numpy = "*"
+python-dotenv = "*"
+spacy = "*"
+scrapy = "*"
+
+[requires]
+python_version = "3.7"
