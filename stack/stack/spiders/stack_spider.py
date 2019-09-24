@@ -7,7 +7,7 @@ from stack.items import StackItem
 class StackSpider(Spider):
     name = "stack"
     allowed_domains = ["stackoverflow.com"]
-    start_urls = ["https://stackoverflow.com/questions/tagged/nlp?tab=Newest"]
+    start_urls = ["https://stackoverflow.com/questions/tagged/artificial-intelligence?tab=Votes"]
 
     def parse(self, response):
         questions = Selector(response).xpath('//div[@class="summary"]/h3')
