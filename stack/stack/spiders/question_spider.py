@@ -23,7 +23,7 @@ class QuestionSpider(Spider):
     start_urls = get_question_paths()
 
     def parse(self, response):
-        question = Selector(response).xpath('//div[@id="content]')
+        question = Selector(response).xpath('//div[@id="content"]')
         item = StackItem()
         item["url"] = question.xpath(
             '//div[@id="question-header"]/h1/a[@class="question-hyperlink"]/@href'
