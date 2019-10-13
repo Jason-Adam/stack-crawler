@@ -1,0 +1,11 @@
+from twisted.internet import reactor
+from scrapy.utils.project import get_project_settings
+from scrapy.crawler import CrawlerRunner
+from stack.spiders.question_spider import QuestionSpider
+
+SETTINGS = get_project_settings()
+RUNNER = CrawlerRunner(SETTINGS)
+
+d = RUNNER.crawl(QuestionSpider)
+d.addBoth(lambda _: reactor.stop())
+reactor.run()
