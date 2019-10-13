@@ -15,7 +15,7 @@ def crawl():
     reactor.stop()
 
 
-print("Starting Crawl")
+print("Crawl Started")
 crawl()
-print("Crawl Finished")
 reactor.run()
+print("Crawl Finished")
