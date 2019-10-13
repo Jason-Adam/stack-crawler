@@ -20,15 +20,18 @@ class StackSpider(Spider):
     ]
 
     def parse(self, response):
-        questions = Selector(response).xpath('//div[@class="summary"]/h3')
+        questions = Selector(response).xpath('//div[@class="summary"]')
 
         for question in questions:
             item = StackItem()
             item["title"] = question.xpath(
-                'a[@class="question-hyperlink"]/text()'
-            ).extract()[0]
+                'h3/a[@class="question-hyperlink"]/text()'
+            ).extract_first()
             item["url"] = question.xpath(
-                'a[@class="question-hyperlink"]/@href'
-            ).extract()[0]
-            # item["question"] = question.xpath('div[@class="post-text"]/p').extract()
+                'h3/a[@class="question-hyperlink"]/@href'
+            ).extract_first()
+            item["excerpt"] = question.xpath(
+                'div[@class="excerpt"]/text()'
+            ).extract_first()
+            item["question"] = ""
             yield item
