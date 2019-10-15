@@ -22,15 +22,9 @@ lint:
 
 ## Set up python virtual environment
 create_environment:
-	@echo ">>> Install Pipenv if not already installed"
-	pipenv install --dev --skip-lock
-	@echo ">>> Installing project dependencies"
+	pipenv install --dev
 	@echo ">>> New pipenv env create. Activate with: pipenv shell"
 
 ## Bind ipython kernel to env: only run after "pipenv shell"
 bind_kernel:
 	ipython kernel install --user --name=$(PROJECT_NAME)
-	@echo ">>> Installing ipython kernel and associating with pipenv for jupyterlab"
-
-test_print:
-	echo $(PROJECT_NAME)
