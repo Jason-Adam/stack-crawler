@@ -3,7 +3,7 @@ The repository holds all the necessary components to run a web-scraper on the St
 ```bash
 stack/stack/settings.py
 ```  
-The scraper currently has two spiders that run sequentially. The stack spider will pull the URLs and titles of questions for a given SO tag. These will be loaded to the Mongo Database. The second crawler will query the URLs from Mongo and proceed to scrape them for the actual question text and other data. The pipeline will perform an upsert on the Mongo datbase. The script can be run by calling the the file:  
+The scraper currently has two spiders that run sequentially. The stack spider will pull the URLs and titles of questions for a given SO tag. These will be loaded to the Mongo Database. The second crawler will query the URLs from Mongo and proceed to scrape them for the actual question text and other data. The pipeline will perform an upsert on the Mongo database. The script can be run by calling the the file:  
 ```bash
 python3 stack/run_spiders.py
 ```  
