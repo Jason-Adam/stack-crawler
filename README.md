@@ -1,4 +1,4 @@
-# Stackoverflow Web Crawler  
+# StackOverflow Web Crawler  
 The repository holds all the necessary components to run a web-scraper on the StackOverflow website. The scraper is currently configured to write the documents to a local MongoDB, but it can easily be changed by commenting out the pipeline in  
 ```bash
 stack/stack/settings.py
