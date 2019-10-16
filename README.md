@@ -12,4 +12,13 @@ This project utilizes a local MongoDB instance. Instructions for setting one up 
 ```bash
 brew services start mongodb-community
 ```  
-I also recommend using **MongoDB Compass** to view your database. It can be downloaded [here](https://www.mongodb.com/products/compass).
+I also recommend using **MongoDB Compass** to view your database. It can be downloaded [here](https://www.mongodb.com/products/compass).  
+## Python Environment  
+You will need the following environment variables for the crawler to run:  
+```bash
+MONGO_DB="stackoverflow"
+MONGO_COLLECTION="ai_questions"
+MONGO_HOST="localhost"
+MONGO_PORT=27017
+SO_TAG="artificial-intelligence"
+```
