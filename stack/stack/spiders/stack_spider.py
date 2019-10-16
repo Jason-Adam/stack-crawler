@@ -1,22 +1,25 @@
+import os
 from scrapy import Spider
 from scrapy.selector import Selector
 from stack.items import StackItem
+
+SO_TAG = os.environ.get("SO_TAG")
 
 
 class StackSpider(Spider):
     name = "stack"
     allowed_domains = ["stackoverflow.com"]
     start_urls = [
-        "https://stackoverflow.com/questions/tagged/artificial-intelligence?tab=votes&page=1&pagesize=50",
-        "https://stackoverflow.com/questions/tagged/artificial-intelligence?tab=votes&page=2&pagesize=50",
-        "https://stackoverflow.com/questions/tagged/artificial-intelligence?tab=votes&page=3&pagesize=50",
-        "https://stackoverflow.com/questions/tagged/artificial-intelligence?tab=votes&page=4&pagesize=50",
-        "https://stackoverflow.com/questions/tagged/artificial-intelligence?tab=votes&page=5&pagesize=50",
-        "https://stackoverflow.com/questions/tagged/artificial-intelligence?tab=votes&page=6&pagesize=50",
-        "https://stackoverflow.com/questions/tagged/artificial-intelligence?tab=votes&page=7&pagesize=50",
-        "https://stackoverflow.com/questions/tagged/artificial-intelligence?tab=votes&page=8&pagesize=50",
-        "https://stackoverflow.com/questions/tagged/artificial-intelligence?tab=votes&page=9&pagesize=50",
-        "https://stackoverflow.com/questions/tagged/artificial-intelligence?tab=votes&page=10&pagesize=50",
+        f"https://stackoverflow.com/questions/tagged/{SO_TAG}?tab=votes&page=1&pagesize=50",
+        f"https://stackoverflow.com/questions/tagged/{SO_TAG}?tab=votes&page=2&pagesize=50",
+        f"https://stackoverflow.com/questions/tagged/{SO_TAG}?tab=votes&page=3&pagesize=50",
+        f"https://stackoverflow.com/questions/tagged/{SO_TAG}?tab=votes&page=4&pagesize=50",
+        f"https://stackoverflow.com/questions/tagged/{SO_TAG}?tab=votes&page=5&pagesize=50",
+        f"https://stackoverflow.com/questions/tagged/{SO_TAG}?tab=votes&page=6&pagesize=50",
+        f"https://stackoverflow.com/questions/tagged/{SO_TAG}?tab=votes&page=7&pagesize=50",
+        f"https://stackoverflow.com/questions/tagged/{SO_TAG}?tab=votes&page=8&pagesize=50",
+        f"https://stackoverflow.com/questions/tagged/{SO_TAG}?tab=votes&page=9&pagesize=50",
+        f"https://stackoverflow.com/questions/tagged/{SO_TAG}?tab=votes&page=10&pagesize=50",
     ]
 
     def parse(self, response):

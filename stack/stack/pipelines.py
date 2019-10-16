@@ -1,12 +1,16 @@
+import os
 import pymongo
+
+MONGO_DB = os.environ.get("MONGO_DB")
+MONGO_COLLECTION = os.environ.get("MONGO_COLLECTION")
+MONGO_HOST = os.environ.get("MONGO_HOST")
+MONGO_PORT = os.environ.get("MONGO_PORT")
+MONGO_URI = f"mongodb://{MONGO_HOST}"
 
 
 class MongoPipeline(object):
     def __init__(
-        self,
-        mongo_uri="mongodb://localhost",
-        mongo_db="stackoverflow",
-        collection_name="ai_questions",
+        self, mongo_uri=MONGO_URI, mongo_db=MONGO_DB, collection_name=MONGO_COLLECTION
     ):
         client = pymongo.MongoClient(mongo_uri)
         db = client[mongo_db]

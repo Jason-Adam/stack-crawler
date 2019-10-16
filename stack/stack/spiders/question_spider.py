@@ -1,3 +1,4 @@
+import os
 import re
 from urllib.parse import urljoin
 from pymongo import MongoClient, collection
@@ -5,13 +6,19 @@ from scrapy import Spider
 from scrapy.selector import Selector
 from stack.items import StackItem
 
+MONGO_DB = os.environ.get("MONGO_DB")
+MONGO_COLLECTION = os.environ.get("MONGO_COLLECTION")
+MONGO_HOST = os.environ.get("MONGO_HOST")
+MONGO_PORT = os.environ.get("MONGO_PORT")
+
+
 tag = re.compile("<.+?>")
 
 
 def get_question_paths():
-    client = MongoClient(host="localhost", port=27017)
-    db = client["stackoverflow"]
-    ai = collection.Collection(database=db, name="ai_questions")
+    client = MongoClient(host=MONGO_HOST, port=MONGO_PORT)
+    db = client[MONGO_DB]
+    ai = collection.Collection(database=db, name=MONGO_COLLECTION)
     cursor = ai.find({})
     urls = [i["url"] for i in cursor]
     return [urljoin("https://stackoverflow.com", url) for url in urls]
