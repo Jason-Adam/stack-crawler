@@ -20,6 +20,8 @@ class MongoPipeline(object):
 
     def process_item(self, item, spider):
         self.collection.update_many(
-            {"url": item["url"]}, {"$set": {"question": item["question"]}}, upsert=True
+            {"url": item["url"]},
+            {"$set": {"question": item["question"], "title": item["title"]}},
+            upsert=True,
         )
         return item

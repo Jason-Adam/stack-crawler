@@ -33,8 +33,5 @@ class StackSpider(Spider):
             item["url"] = question.xpath(
                 'h3/a[@class="question-hyperlink"]/@href'
             ).extract_first()
-            item["excerpt"] = question.xpath(
-                'div[@class="excerpt"]/text()'
-            ).extract_first()
             item["question"] = ""
             yield item

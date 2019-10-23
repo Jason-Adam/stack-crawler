@@ -35,6 +35,9 @@ class QuestionSpider(Spider):
         item["url"] = question.xpath(
             '//div[@id="question-header"]/h1/a[@class="question-hyperlink"]/@href'
         ).extract_first()
+        item["title"] = question.xpath(
+            '//div[@id="question-header"]/h1/a[@class="question-hyperlink"]/text()'
+        ).extract_first()
         q_text = response.xpath(
             '//div[@class="postcell post-layout--right"]/div[@class="post-text"]/p'
         )
