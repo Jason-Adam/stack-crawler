@@ -10,16 +10,16 @@ class StackSpider(Spider):
     name = "stack"
     allowed_domains = ["stackoverflow.com"]
     start_urls = [
-        f"https://stackoverflow.com/questions/tagged/{SO_TAG}?tab=votes&page=1&pagesize=50",
-        f"https://stackoverflow.com/questions/tagged/{SO_TAG}?tab=votes&page=2&pagesize=50",
-        f"https://stackoverflow.com/questions/tagged/{SO_TAG}?tab=votes&page=3&pagesize=50",
-        f"https://stackoverflow.com/questions/tagged/{SO_TAG}?tab=votes&page=4&pagesize=50",
-        f"https://stackoverflow.com/questions/tagged/{SO_TAG}?tab=votes&page=5&pagesize=50",
-        f"https://stackoverflow.com/questions/tagged/{SO_TAG}?tab=votes&page=6&pagesize=50",
-        f"https://stackoverflow.com/questions/tagged/{SO_TAG}?tab=votes&page=7&pagesize=50",
-        f"https://stackoverflow.com/questions/tagged/{SO_TAG}?tab=votes&page=8&pagesize=50",
-        f"https://stackoverflow.com/questions/tagged/{SO_TAG}?tab=votes&page=9&pagesize=50",
-        f"https://stackoverflow.com/questions/tagged/{SO_TAG}?tab=votes&page=10&pagesize=50",
+        f"https://stackoverflow.com/questions/tagged/{SO_TAG}?tab=Votes&page=1&pagesize=50",
+        f"https://stackoverflow.com/questions/tagged/{SO_TAG}?tab=Votes&page=2&pagesize=50",
+        f"https://stackoverflow.com/questions/tagged/{SO_TAG}?tab=Votes&page=3&pagesize=50",
+        f"https://stackoverflow.com/questions/tagged/{SO_TAG}?tab=Votes&page=4&pagesize=50",
+        f"https://stackoverflow.com/questions/tagged/{SO_TAG}?tab=Votes&page=5&pagesize=50",
+        f"https://stackoverflow.com/questions/tagged/{SO_TAG}?tab=Votes&page=6&pagesize=50",
+        f"https://stackoverflow.com/questions/tagged/{SO_TAG}?tab=Votes&page=7&pagesize=50",
+        f"https://stackoverflow.com/questions/tagged/{SO_TAG}?tab=Votes&page=8&pagesize=50",
+        f"https://stackoverflow.com/questions/tagged/{SO_TAG}?tab=Votes&page=9&pagesize=50",
+        f"https://stackoverflow.com/questions/tagged/{SO_TAG}?tab=Votes&page=10&pagesize=50",
     ]
 
     def parse(self, response):
