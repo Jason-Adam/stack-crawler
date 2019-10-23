@@ -27,11 +27,11 @@ class StackSpider(Spider):
 
         for question in questions:
             item = StackItem()
-            item["title"] = question.xpath(
-                'h3/a[@class="question-hyperlink"]/text()'
-            ).extract_first()
             item["url"] = question.xpath(
                 'h3/a[@class="question-hyperlink"]/@href'
+            ).extract_first()
+            item["title"] = question.xpath(
+                'h3/a[@class="question-hyperlink"]/text()'
             ).extract_first()
             item["question"] = ""
             yield item
