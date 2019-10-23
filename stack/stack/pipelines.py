@@ -4,7 +4,7 @@ import pymongo
 MONGO_DB = os.environ.get("MONGO_DB")
 MONGO_COLLECTION = os.environ.get("MONGO_COLLECTION")
 MONGO_HOST = os.environ.get("MONGO_HOST")
-MONGO_PORT = os.environ.get("MONGO_PORT")
+MONGO_PORT = int(os.environ.get("MONGO_PORT"))
 MONGO_URI = f"mongodb://{MONGO_HOST}"
 
 
